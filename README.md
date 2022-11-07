@@ -8,7 +8,7 @@ To reach Jenkins she needs to be deployed on host inside VPN (or add functionali
 In `.env` file following parameters should be specified:
 
 - `TOKEN` - Telegram bot token;
-- `SERVER_UR` - server URL, accessible to the world, of bot where it is hosted or some ngrok URL or whatever;
+- `SERVER_URL` - server URL, accessible to the world, of bot where it is hosted or some ngrok URL or whatever;
 - `PORT` - port number the bot is listening;
 - `JENKINS_URL` - Jenkins URL;
 - `JENKINS_USER` - Jenkins username;
