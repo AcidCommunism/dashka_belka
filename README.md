@@ -7,6 +7,7 @@ To reach Jenkins she needs to be deployed on host inside VPN (or add functionali
 
 To start:
 
+- `npm install`;
 - `npm run build`;
 - `npm run start`.
 
