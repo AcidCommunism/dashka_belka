@@ -8,7 +8,7 @@ const launchCustomJobAction = async (bot) => {
         await (0, jenkins_1.launchCustomTestJob)();
         return await bot.telegram.sendMessage(
         // TODO:
-        ctx?.chat?.id ?? 'well, I just hope it never happens for now', 'Готово!', {
+        ctx?.chat?.id ?? 'well, I just hope it never happens for now', 'Запустила!', {
             reply_markup: {
                 inline_keyboard: [
                     [

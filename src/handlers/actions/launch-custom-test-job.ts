@@ -8,7 +8,7 @@ export const launchCustomJobAction = async (bot: Telegraf) => {
         return await bot.telegram.sendMessage(
             // TODO:
             ctx?.chat?.id ?? 'well, I just hope it never happens for now',
-            'Готово!',
+            'Запустила!',
             {
                 reply_markup: {
                     inline_keyboard: [
