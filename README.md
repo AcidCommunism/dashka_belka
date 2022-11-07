@@ -5,6 +5,11 @@ Dashka can help you launch your test jobs, send updates about results and just b
 
 To reach Jenkins she needs to be deployed on host inside VPN (or add functionality to explicitly install VPN client and connect by herself).
 
+To start:
+
+- `npm run build`;
+- `npm run start`.
+
 In `.env` file following parameters should be specified:
 
 - `TOKEN` - Telegram bot token;
