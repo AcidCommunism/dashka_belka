@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.startBotCommand = void 0;
+const logger_1 = require("../../logger");
 const startBotCommand = (bot) => bot.start((ctx) => {
+    logger_1.logger.info(`Received new /start command from user ${JSON.stringify(ctx.from)}`);
+    logger_1.logger.info(`Chat id: ${ctx.chat.id}`);
     renderStartMenu(bot, ctx);
 });
 exports.startBotCommand = startBotCommand;

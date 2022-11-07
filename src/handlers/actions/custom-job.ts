@@ -1,7 +1,14 @@
 import { Telegraf } from 'telegraf';
+import { logger } from '../../../logger';
 
 export const customJobActionHandler = async (bot: Telegraf) => {
     bot.action('customJob', async (ctx) => {
+        logger.info(
+            `Received new custom job action from user ${JSON.stringify(
+                ctx.from
+            )}`
+        );
+        logger.info(`Chat id: ${ctx?.chat?.id}`);
         await ctx.deleteMessage();
         await renderCustomJobMenu(bot, ctx);
     });

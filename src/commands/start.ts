@@ -1,7 +1,12 @@
 import { Telegraf } from 'telegraf';
+import { logger } from '../../logger';
 
 export const startBotCommand = (bot: Telegraf) =>
     bot.start((ctx) => {
+        logger.info(
+            `Received new /start command from user ${JSON.stringify(ctx.from)}`
+        );
+        logger.info(`Chat id: ${ctx.chat.id}`);
         renderStartMenu(bot, ctx);
     });
 

@@ -2,8 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.launchCustomJobAction = void 0;
 const jenkins_1 = require("../../util/jenkins");
+const logger_1 = require("../../../logger");
 const launchCustomJobAction = async (bot) => {
     bot.action('launchCustomTestJob', async (ctx) => {
+        logger_1.logger.info(`Received new custom job launch action from user ${JSON.stringify(ctx.from)}`);
+        logger_1.logger.info(`Chat id: ${ctx?.chat?.id}`);
         await ctx.deleteMessage();
         await (0, jenkins_1.launchCustomTestJob)();
         return await bot.telegram.sendMessage(
