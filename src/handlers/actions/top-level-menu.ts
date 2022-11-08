@@ -8,7 +8,7 @@ export const topLevelMenuActionHandler = async (bot: Telegraf) => {
 };
 
 async function renderStartMenu(bot: Telegraf, ctx: any) {
-    return await bot.telegram.sendMessage(
+    await bot.telegram.sendMessage(
         // TODO:
         ctx?.chat?.id ?? 'well, I just hope it never happens for now',
         'Ну привет)',

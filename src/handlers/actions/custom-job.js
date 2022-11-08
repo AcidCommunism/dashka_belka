@@ -12,11 +12,7 @@ const customJobActionHandler = async (bot) => {
 };
 exports.customJobActionHandler = customJobActionHandler;
 async function renderCustomJobMenu(bot, ctx) {
-    bot.telegram.sendChatAction(ctx.chat.id, 'upload_photo');
-    await bot.telegram.sendPhoto(ctx.chat.id, {
-        source: 'src/media-content/start-job.png',
-    });
-    return await bot.telegram.sendMessage(
+    await bot.telegram.sendMessage(
     // TODO:
     ctx?.chat?.id ?? 'well, I just hope it never happens for now', 'Погнали?', {
         reply_markup: {

@@ -9,7 +9,7 @@ const topLevelMenuActionHandler = async (bot) => {
 };
 exports.topLevelMenuActionHandler = topLevelMenuActionHandler;
 async function renderStartMenu(bot, ctx) {
-    return await bot.telegram.sendMessage(
+    await bot.telegram.sendMessage(
     // TODO:
     ctx?.chat?.id ?? 'well, I just hope it never happens for now', 'Ну привет)', {
         reply_markup: {

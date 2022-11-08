@@ -87,7 +87,7 @@ import { mentionListener } from './src/listeners/mention';
 mentionListener(dashka);
 
 import { textListener } from './src/listeners/text';
-textListener(dashka);
+//textListener(dashka);
 
 import { launchCustomJobAction } from './src/handlers/actions/launch-custom-test-job';
 launchCustomJobAction(dashka);

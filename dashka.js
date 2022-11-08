@@ -96,8 +96,7 @@ const no_1 = require("./src/listeners/no");
 (0, no_1.noListener)(dashka);
 const mention_1 = require("./src/listeners/mention");
 (0, mention_1.mentionListener)(dashka);
-const text_1 = require("./src/listeners/text");
-(0, text_1.textListener)(dashka);
+//textListener(dashka);
 const launch_custom_test_job_1 = require("./src/handlers/actions/launch-custom-test-job");
 (0, launch_custom_test_job_1.launchCustomJobAction)(dashka);
 dashka.launch({
