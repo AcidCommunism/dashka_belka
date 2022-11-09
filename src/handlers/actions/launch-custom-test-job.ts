@@ -51,6 +51,7 @@ const pickMeUpVideoLinks = [
     'https://www.youtube.com/watch?v=nVhNCTH8pDs&ab_channel=PinkFloyd',
     'https://www.youtube.com/watch?v=Olgn9sXNdl0&ab_channel=UniversalPictures',
     'https://www.youtube.com/watch?v=j-ihkH3-yC4&ab_channel=ANACONDAZ',
+    'https://www.youtube.com/watch?v=AdHJurX0yVA&ab_channel=InsideOutMusicTV',
 ];
 
 const notificationsChannelId = -1001818268170;
