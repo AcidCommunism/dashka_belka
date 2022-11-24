@@ -54,10 +54,10 @@ const pickMeUpVideoLinks = [
     'https://www.youtube.com/watch?v=AdHJurX0yVA&ab_channel=InsideOutMusicTV',
 ];
 
-const notificationsChannelId = -1001818268170;
+const notificationsChannelId = 10;
 
 export const launchCustomJobAction = async (bot: Telegraf) => {
-    bot.action('launchCustomTestJob', async (ctx) => {
+    bot.action('launchCustomTestJob', async ctx => {
         logger.info(
             `Received new custom job launch action from user ${JSON.stringify(
                 ctx.from
@@ -75,34 +75,56 @@ export const launchCustomJobAction = async (bot: Telegraf) => {
                 source: 'src/media-content/start-job.png',
             }
         );
-        await launchCustomTestJob();
-        await bot.telegram.sendMessage(
-            // TODO:
-            ctx?.chat?.id ?? 'well, I just hope it never happens for now',
-            'Запустила!',
-            {
-                reply_markup: {
-                    inline_keyboard: [
-                        [
-                            {
-                                text: 'В начало!',
-                                callback_data: 'topLevelMenu',
-                            },
+        try {
+            await launchCustomTestJob();
+            await bot.telegram.sendMessage(
+                // TODO:
+                ctx?.chat?.id ?? 'well, I just hope it never happens for now',
+                'Запустила!',
+                {
+                    reply_markup: {
+                        inline_keyboard: [
+                            [
+                                {
+                                    text: 'В начало!',
+                                    callback_data: 'topLevelMenu',
+                                },
+                            ],
                         ],
-                    ],
-                },
-            }
-        );
-        await bot.telegram.sendMessage(
-            notificationsChannelId,
-            `${_.sample(greetings)},  ${_.sample(audiences)}!👋\n` +
-                `Стартанула джобу с Е2Е тестами по просьбе @${ctx.from?.username}🚀\n` +
-                'По результатам отпишусь!\n' +
-                `<a href="${_.sample(pickMeUpVideoLinks)}">Не скучайте</a>!🙂`,
-            {
-                parse_mode: 'HTML',
-                disable_web_page_preview: true,
-            }
-        );
+                    },
+                }
+            );
+            await bot.telegram.sendMessage(
+                notificationsChannelId,
+                `${_.sample(greetings)},  ${_.sample(audiences)}!👋\n` +
+                    `Стартанула джобу с Е2Е тестами по просьбе @${ctx.from?.username}🚀\n` +
+                    'По результатам отпишусь!\n' +
+                    `<a href="${_.sample(
+                        pickMeUpVideoLinks
+                    )}">Не скучайте</a>!🙂`,
+                {
+                    parse_mode: 'HTML',
+                    disable_web_page_preview: true,
+                }
+            );
+        } catch (error) {
+            await bot.telegram.sendMessage(
+                // TODO:
+                ctx?.chat?.id ?? 'well, I just hope it never happens for now',
+                `Чёт пошло не так, соррян:(\n Подробности: ${error}`,
+                {
+                    reply_markup: {
+                        inline_keyboard: [
+                            [
+                                {
+                                    text: 'В начало!',
+                                    callback_data: 'topLevelMenu',
+                                },
+                            ],
+                        ],
+                    },
+                }
+            );
+        }
     });
 };

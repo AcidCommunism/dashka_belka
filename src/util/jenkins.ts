@@ -16,5 +16,6 @@ export const launchCustomTestJob = async () => {
         });
     } catch (error) {
         logger.error(error);
+        throw error;
     }
 };
