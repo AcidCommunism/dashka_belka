@@ -54,7 +54,7 @@ const pickMeUpVideoLinks = [
     'https://www.youtube.com/watch?v=AdHJurX0yVA&ab_channel=InsideOutMusicTV',
 ];
 
-const notificationsChannelId = 10;
+const notificationsChannelId = process.env.TELEGRAM_CHANNEL_ID;
 
 export const launchCustomJobAction = async (bot: Telegraf) => {
     bot.action('launchCustomTestJob', async ctx => {

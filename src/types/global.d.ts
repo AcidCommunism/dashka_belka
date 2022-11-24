@@ -8,5 +8,6 @@ namespace NodeJS {
         JENKINS_URL: string;
         JENKINS_USER: string;
         JENKINS_TOKEN: string;
+        TELEGRAM_CHANNEL_ID: number;
     }
 }

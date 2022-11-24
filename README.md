@@ -20,4 +20,5 @@ In `.env` file following parameters should be specified:
 - `PORT` - port number the bot is listening;
 - `JENKINS_URL` - Jenkins URL;
 - `JENKINS_USER` - Jenkins username;
-- `JENKINS_TOKEN` - Jenkins user's auth token.
+- `JENKINS_TOKEN` - Jenkins user's auth token;
+- `TELEGRAM_CHANNEL_ID` - Telegram notification channel ID.
